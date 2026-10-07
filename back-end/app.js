@@ -22,6 +22,19 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+app.get('/about', (req, res) => {
+  res.json({
+    title: 'About Us',
+    paragraphs: [
+      "I'm Vihaan Agarwal.",
+      'I was born in New Delhi and now live in New York.',
+      'I study business, computer science, and philosophy at NYU.',
+    ],
+    imageUrl: '/photo.png',
+    imageAlt: 'Vihaan Agarwal',
+  })
+})
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
